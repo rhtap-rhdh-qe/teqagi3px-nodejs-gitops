@@ -1,0 +1,21 @@
+apiVersion: backstage.io/v1alpha1
+kind: Resource
+metadata:
+  name: teqagi3px-nodejs-gitops
+  description: This is GitOps manifest for teqagi3px-nodejs   
+  links:
+    - url: https://www.redhat.com/en/solutions/trusted-software-supply-chain
+      title: Trusted Secure Supply Chain 
+      icon: dashboard
+      type: admin-dashboard
+  annotations:    
+    argocd/app-selector: rhtap/gitops=teqagi3px-nodejs
+    backstage.io/kubernetes-id: teqagi3px-nodejs 
+    backstage.io/techdocs-ref: dir:. 
+    janus-idp.io/tekton: teqagi3px-nodejs
+spec:
+  type: gitops
+  owner: user:guest 
+  lifecycle: experimental
+  dependsOn:
+    - component:teqagi3px-nodejs
